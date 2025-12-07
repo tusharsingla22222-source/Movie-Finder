@@ -1,0 +1,255 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Page Header Styles */
+.page-header {
+    background: #1a1a1a;
+    padding: 60px 20px;
+    text-align: center;
+    border-bottom: 2px solid #E50914;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.page-title {
+    font-size: 3rem;
+    color: white;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.page-subtitle {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 400;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .page-header {
+        padding: 40px 15px;
+    }
+
+    .page-title {
+        font-size: 2rem;
+    }
+
+    .page-subtitle {
+        font-size: 1rem;
+    }
+}
+
+/* Movies Section */
+.movies-section {
+    padding: 40px 20px;
+    background: #0a0a0a;
+}
+
+.movies-section .container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    width: 100%;
+}
+
+.card {
+    height: 500px;
+    width: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    background: #1a1a1a;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 40px rgba(229, 9, 20, 0.5);
+    border-color: #E50914;
+}
+
+.card .image {
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: filter 0.3s ease;
+    position: relative;
+    z-index: 0;
+    background-color: #2a2a2a;
+    /* Fallback color */
+}
+
+.card .image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    z-index: 1;
+}
+
+.card:hover .image::before {
+    opacity: 1;
+}
+
+.card:hover .image {
+    filter: brightness(0.4);
+}
+
+.card .content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 30px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.95), transparent);
+    transform: translateY(100%);
+    opacity: 0;
+    transition: all 0.4s ease;
+}
+
+.card:hover .content {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.card .content h3 {
+    color: #E50914;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.card .content p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.card .content button {
+    background: #E50914;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+}
+
+.card .content button::before {
+    content: '▶';
+    margin-right: 8px;
+    font-size: 0.8rem;
+}
+
+.card .content button:hover {
+    background: #ff0a16;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(229, 9, 20, 0.4);
+}
+
+.card .content button:active {
+    transform: translateY(0);
+}
+
+.card .image {
+    height: 100%;
+    width: 100%;
+}
+
+/* Individual card background images - Placeholders for Adventure Movies */
+/* You can replace these URLs with actual adventure movie posters */
+
+.one .image {
+    background-image: url('https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p11003170_p_v8_ak.jpg');
+    background-position: top;
+}
+
+.one .image::before {
+    background-image: url('https://m.media-amazon.com/images/M/MV5BMjQyNjQ4ODk4M15BMl5BanBnXkFtZTgwNzI3MzIzNzE@._V1_.jpg');
+}
+
+.two .image {
+    background-image: url('https://www.lucasfilm.com/app/uploads/IndianaJones-DOD-key-art-480x720.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.two .image::before {
+    background-image: url('https://hips.hearstapps.com/hmg-prod/images/harrison-ford-indiana-jones-649da0a102993.jpeg?crop=0.502xw:1.00xh;0.364xw,0&resize=640:*');
+    background-size: cover;
+}
+
+.three .image {
+    background-image: url('https://lumiere-a.akamaihd.net/v1/images/p_junglecruise_21740_v2_bb7f0ae4.jpeg');
+}
+
+.three .image::before {
+    background-image: url('https://m.media-amazon.com/images/M/MV5BZTRjZDAyMjEtZDNmMy00ZDM4LTkzY2YtMGYxNTBkNTdjYjY5XkEyXkFqcGdeQW1hcmNtYW5u._V1_.jpg');
+    background-size: cover;
+}
+.four .image{
+    background-image: url('https://resizing.flixster.com/fo6Ukr9hppKUyhiAn6nGrkbT8Sw=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2NjYjMwYWRjLTYxMjQtNDE4NS04N2VjLTNkYTM0NGY1ZWM2Yy5qcGc=');
+    background-size: cover;
+    background-position: top;
+}
+.four .image::before{
+    background-image: url('https://m.media-amazon.com/images/M/MV5BYTMzZDRiNDctODg4ZS00ZTc2LTgwZjEtMzk2NjU3YWViNTdkXkEyXkFqcGdeQXNuZXNodQ@@._V1_.jpg');
+    background-size: cover;
+}
+.five .image{
+    background-image: url('https://m.media-amazon.com/images/M/MV5BNTc0YmQxMjEtODI5MC00NjFiLTlkMWUtOGQ5NjFmYWUyZGJhXkEyXkFqcGc@._V1_.jpg');
+    background-size: cover;
+}
+.five .image::before{
+    background-image: url('https://media.vanityfair.com/photos/65d602a3889ccabc5975eb5c/3:2/w_3240,h_2160,c_limit/dune-part-two-review.jpg');
+    background-size: cover;
+}
+.six .image{
+    background-image: url('https://m.media-amazon.com/images/M/MV5BYzgwM2JiY2MtNWQ5OC00NDc1LWExMjYtYmY2YjViZmViYWM5XkEyXkFqcGc@._V1_.jpg');
+    background-size: cover;
+}
+.six .image::before{
+    background-image: url('https://platform.vox.com/wp-content/uploads/sites/2/chorus/uploads/chorus_asset/file/23407003/northman.jpg?quality=90&strip=all&crop=0,0,100,100');
+    background-size: cover;
+}
+.seven .image{
+    background-image: url('https://m.media-amazon.com/images/M/MV5BMGM3ZmI3NzQtNzU5Yi00ZWI1LTg3YTAtNmNmNWIyMWFjZTBkXkEyXkFqcGc@._V1_.jpg');
+    background-size: cover;
+}
+.seven .image::before{
+    background-image: url('https://m.media-amazon.com/images/M/MV5BNGEzMDgwNWItOWI3Yi00ZGYzLTk5ZGEtM2QyZmNkZTM5NWE5XkEyXkFqcGdeQWFybm8@._V1_.jpg');
+    background-size: cover;
+}
+.eight .image{
+    background-image: url('https://m.media-amazon.com/images/M/MV5BOTY3OTUxYWQtMTNlNC00OTEwLWI0NWYtMjczZTBjZTlkODFkXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg');
+    background-size: cover;
+    background-position: center;
+}
+.nine .image{
+    background-image: url('https://images.moviesanywhere.com/a43ec37d873aec77ab3b01c2da5224ee/d13512d9-ebeb-45a5-a4b7-25c3857b1af3.jpg');
+    background-size: cover;
+}

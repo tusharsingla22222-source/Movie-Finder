@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie Finder</title>
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Funnel+Sans:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Michroma&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Pompiere&family=Shojumaru&family=Space+Grotesk:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Favicon Setup (Correct Paths) -->
+    <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+
+    <meta name="apple-mobile-web-app-title" content="Movie Finder" />
+    <link rel="manifest" href="site.webmanifest" />
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <div class="movie-finder-heading">
+          <div class="movie-finder-logo"></div>
+          <h2>MOVIE FINDER</h2>
+        </div>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Trending</a></li>
+          <li class="categories-dropdown">
+            <a href="#" id="categories-link"
+              >Categories <span class="arrow">▼</span></a
+            >
+            <div class="categories-menu" id="categories-menu">
+              <div class="categories-column">
+                <h3>Genres</h3>
+                <a href="action-movies.html">Action</a>
+                <a href="adventure.html">Adventure</a>
+                <a href="comedy.html">Comedy</a>
+                <a href="#">Drama</a>
+                <a href="#">Fantasy</a>
+                <a href="#">Horror</a>
+                <a href="#">Mystery</a>
+                <a href="#">Romance</a>
+                <a href="#">Sci-Fi</a>
+                <a href="#">Thriller</a>
+              </div>
+              <div class="categories-column">
+                <h3>Formats</h3>
+                <a href="#">Movies</a>
+                <a href="#">TV Series</a>
+                <a href="#">Documentaries</a>
+                <a href="#">Short Films</a>
+                <a href="#">Animated</a>
+                <a href="#">Live Action</a>
+              </div>
+              <div class="categories-column">
+                <h3>Years</h3>
+                <a href="#">2025</a>
+                <a href="#">2024</a>
+                <a href="#">2023</a>
+                <a href="#">2022</a>
+                <a href="#">2021</a>
+                <a href="#">2020</a>
+                <a href="#">Classics</a>
+              </div>
+            </div>
+          </li>
+          <li><a href="#">Favourites</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class="hero-section">
+        <div class="hero-slider">
+          <!-- Movie Posters with unique text for each -->
+          <div
+            class="hero-slide active"
+            style="
+              background-image: url('https://image.tmdb.org/t/p/w1280/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg');
+            "
+            data-title="Interstellar"
+            data-subtitle="Mankind was born on Earth. It was never meant to die here."
+            data-tag="Favorite"
+          >
+            <span class="movie-tag tag-favorite">Favorite</span>
+          </div>
+          <div
+            class="hero-slide"
+            style="
+              background-image: url('https://image.tmdb.org/t/p/w1280/jRXYjXNq0Cs2TcJjLkki24LpRWL.jpg');
+            "
+            data-title="Avatar"
+            data-subtitle="Enter the world of Pandora and discover a new adventure"
+            data-tag="Recent"
+          >
+            <span class="movie-tag tag-recent">Recent</span>
+          </div>
+          <div
+            class="hero-slide"
+            style="
+              background-image: url('https://image.tmdb.org/t/p/w1280/9xjZS2rlVxm8SFx8kPC3aIGCOYQ.jpg');
+            "
+            data-title="Dune"
+            data-subtitle="A mythic and emotionally charged hero's journey"
+            data-tag="Trending"
+          >
+            <span class="movie-tag tag-trending">Trending</span>
+          </div>
+          <div
+            class="hero-slide"
+            style="
+              background-image: url('https://image.tmdb.org/t/p/w1280/hziiv14OpD73u9gAak4XDDfBKa2.jpg');
+            "
+            data-title="Avatar: The Way of Water"
+            data-subtitle="Return to Pandora and explore the depths of the ocean"
+            data-tag="Recent"
+          >
+            <span class="movie-tag tag-recent">Recent</span>
+          </div>
+          <div
+            class="hero-slide"
+            style="
+              background-image: url('https://image.tmdb.org/t/p/w1280/b0PlSFdDwbyK0cf5RxwDpaOJQvQ.jpg');
+            "
+            data-title="Inception"
+            data-subtitle="Your mind is the scene of the crime"
+            data-tag="Favorite"
+          >
+            <span class="movie-tag tag-favorite">Favorite</span>
+          </div>
+          <div
+            class="hero-slide"
+            style="
+              background-image: url('https://image.tmdb.org/t/p/w1280/zqkmTXzjkAgXmEWLRsY4UpTWCeo.jpg');
+            "
+            data-title="The Batman"
+            data-subtitle="Unmask the truth. Justice comes from the shadows."
+            data-tag="Trending"
+          >
+            <span class="movie-tag tag-trending">Trending</span>
+          </div>
+          <div
+            class="hero-slide"
+            style="
+              background-image: url('https://image.tmdb.org/t/p/w1280/8Vt6mWEReuy4Of61eNJ51L1UR1i.jpg');
+            "
+            data-title="Spider-Man: No Way Home"
+            data-subtitle="The multiverse is unleashed. Heroes collide."
+            data-tag="Upcoming"
+          >
+            <span class="movie-tag tag-upcoming">Upcoming</span>
+          </div>
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <h1 class="hero-title"></h1>
+          <p class="hero-subtitle"></p>
+        </div>
+        <div class="slider-indicators">
+          <span class="indicator active" data-slide="0"></span>
+          <span class="indicator" data-slide="1"></span>
+          <span class="indicator" data-slide="2"></span>
+          <span class="indicator" data-slide="3"></span>
+          <span class="indicator" data-slide="4"></span>
+          <span class="indicator" data-slide="5"></span>
+          <span class="indicator" data-slide="6"></span>
+        </div>
+      </section>
+    </main>
+    <footer></footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

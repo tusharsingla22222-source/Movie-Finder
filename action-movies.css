@@ -1,0 +1,345 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Page Header Styles */
+.page-header {
+    background: #1a1a1a;
+    padding: 60px 20px;
+    text-align: center;
+    border-bottom: 2px solid #E50914;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.page-title {
+    font-size: 3rem;
+    color: white;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.page-subtitle {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 400;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .page-header {
+        padding: 40px 15px;
+    }
+
+    .page-title {
+        font-size: 2rem;
+    }
+
+    .page-subtitle {
+        font-size: 1rem;
+    }
+}
+
+/* Movies Section */
+.movies-section {
+    padding: 40px 20px;
+    background: #0a0a0a;
+}
+
+.movies-section .container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    width: 100%;
+}
+
+.card {
+    height: 500px;
+    width: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    background: #1a1a1a;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 40px rgba(229, 9, 20, 0.5);
+    border-color: #E50914;
+}
+
+.card .image {
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: filter 0.3s ease;
+    position: relative;
+    z-index: 0;
+}
+
+.card .image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    z-index: 1;
+}
+
+.card:hover .image::before {
+    opacity: 1;
+}
+
+.card:hover .image {
+    filter: brightness(0.4);
+}
+
+.card .content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 30px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.95), transparent);
+    transform: translateY(100%);
+    opacity: 0;
+    transition: all 0.4s ease;
+}
+
+.card:hover .content {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.card .content h3 {
+    color: #E50914;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.card .content p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.card .content button {
+    background: #E50914;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+}
+
+.card .content button::before {
+    content: '▶';
+    margin-right: 8px;
+    font-size: 0.8rem;
+}
+
+.card .content button:hover {
+    background: #ff0a16;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(229, 9, 20, 0.4);
+}
+
+.card .content button:active {
+    transform: translateY(0);
+}
+
+/* Individual card background images */
+.one .image {
+    background-image: url('https://www.tallengestore.com/cdn/shop/products/JohnWick-KeanuReeves-HollywoodEnglishActionMoviePoster-2_d2e65a82-e8e1-46f9-b5f0-7cbd47c1747c.jpg?v=1649071605');
+}
+
+.one .image::before {
+    background-image: url('https://images-cdn.ubuy.co.in/6370315f29bf37245d5507f3-movie-john-wick-chapter-2-poster-keanu.jpg');
+}
+
+.two .image {
+    background-image: url('https://m.media-amazon.com/images/M/MV5BZjhkNjM0ZTMtNGM5MC00ZTQ3LTk3YmYtZTkzYzdiNWE0ZTA2XkEyXkFqcGc@._V1_.jpg');
+}
+
+.two .image::before {
+    background-image: url('https://occ-0-8407-2218.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABSHktF8BHUjajWUYpC_mH3L-yzecnbav68BCAq35tDl7yFdYTNG6w8YQSVEaeq2T6pPylranFVq_qig3aSlpWPdDrUSRiwr-NpZC.jpg?r=074');
+}
+.three .image{
+    background-image: url('https://i.scdn.co/image/ab67616d0000b273d54fea0cbb5a2eaf92e24a28');
+    background-size: cover;
+    background-position: right;
+}
+.three .image::before {
+    background-image: url('https://statcdn.fandango.com/MPX/image/NBCU_Fandango/650/263/thumb_4F3FA23C-E60D-48C0-9C14-6C5372CCB653.jpg');
+    background-size: cover;
+}
+.four{
+    background-image: url('https://m.media-amazon.com/images/M/MV5BMjIyMTg5MTg4OV5BMl5BanBnXkFtZTgwMzkzMjY5NzE@._V1_FMjpg_UX1000_.jpg');
+    background-size: cover;
+}
+.four .image::before {
+    background-image: url('https://media.vanityfair.com/photos/576d4bb1aaded9eb115d504d/master/pass/independence-day-resurgence-review_1024.jpg');
+    background-size: cover;
+}
+.five{
+    background-image: url('https://m.media-amazon.com/images/M/MV5BNTU0ZjYxOWItOWViMC00YWVlLWJlMGUtZjc1YWU0NTlhY2ZhXkEyXkFqcGc@._V1_.jpg');
+    background-size: cover;
+}
+.five .image::before {
+    background-image: url('https://img-cdn.thepublive.com/filters:format(webp)/movietalkies/media/post_attachments/wp-content/uploads/2023/12/IMG-20231215-WA0019.jpg');
+    background-size: cover;
+}
+.six{
+    background-image: url('https://m.media-amazon.com/images/S/pv-target-images/31084855ebf6db6efc55294c345e6b1ad02414e35da69e5d14663cc23704cf33.jpg');
+    background-size: cover;
+    background-position: bottom;
+}
+.six .image::before {
+    background-image: url('https://dnm.nflximg.net/api/v6/BvVbc2Wxr2w6QuoANoSpJKEIWjQ/AAAAQWcw7pDMYnz46wpmaYhHtzDBrOqr-V89XlzXdBuFQdkF4udnYL9LAQOw-Ju4tvkiBnkRTRZ1kpnAa2zkGsI1LLozBzCq1LPpCVSawq_Nsk8HzG-7zM1KDw8Yy8rFqv-13V6RLey7L0eXxNcUAnyC.jpg?r=30b');
+    background-size: cover;
+}
+.seven{
+    background-image: url('https://cdn.district.in/movies-assets/images/cinema/Kingdom%20(1)-2ca3f7c0-2722-11f0-b928-13aed40177fa.jpg');
+    background-size: cover;
+}
+.seven .image::before {
+    background-image: url('https://th-i.thgim.com/public/incoming/luw17q/article69877581.ece/alternates/FREE_1200/KINGDOM%20new.jpg');
+    background-size: cover;
+}
+.eight{
+    background-image: url('https://m.media-amazon.com/images/I/810bygSRMqL._AC_UF1000,1000_QL80_.jpg');
+    background-size: cover;
+}
+.eight .image::before {
+    background-image: url('https://variety.com/wp-content/uploads/2018/07/skyscraper-dwayne-johnson-e1531233613923.jpg?w=1000&h=562&crop=1');
+    background-size: cover;
+}
+.nine{
+    background-image: url('https://m.media-amazon.com/images/S/pv-target-images/c0423aec06e740f429175606ca75c605bdf1634644d7f28c92497ad149434ae6.jpg');
+    background-size: cover;
+}
+.nine .image::before {
+    background-image: url('https://www.koimoi.com/wp-content/new-galleries/2025/06/ballerina-movie-review-ana-de-armas-and-keanu-reeves-combo-makes-this-one-an-intense-watch-1.jpg');
+    background-size: cover;
+}
+.ten{
+    background-image: url('https://images.moviesanywhere.com/86d2e5d0e547fb23cbb952098a67de55/753a80b5-a63b-458b-8df9-06e3665ae845.jpg');
+    background-size: cover;
+    background-position: center;
+}
+.ten .image::before {
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThe-t59ELJ-STjP7jl0UBEuxfA5k4Osq2dJw&s');
+    background-size: cover;
+}
+.eleven{
+    background-image: url('https://www.tallengestore.com/cdn/shop/products/Fast_Furious_8_-_Fate_Of_The_Furious_-_Tallenge_Hollywood_Action_Movie_Poster.jpg?v=1582535720');
+    background-size: cover;
+}
+.eleven .image::before {
+    background-image: url('https://platform.vox.com/wp-content/uploads/sites/2/chorus/uploads/chorus_asset/file/8300593/MV5BMjM5MDc5ODQ3MV5BMl5BanBnXkFtZTgwMDk3NDczMTI_._V1_SY1000_CR0_0_1553_1000_AL_.jpg?quality=90&strip=all&crop=1.7063747585319,0,96.587250482936,100');
+    background-size: cover;
+}
+.twelve{
+    background-image: url('https://source.boomplaymusic.com/buzzgroup1/M00/37/03/rBEeLGLqGtOAEKVJAALLOiAaFeA729.jpg');
+    background-size: cover;
+}
+.twelve .image::before {
+    background-image: url('https://dnm.nflximg.net/api/v6/2DuQlx0fM4wd1nzqm5BFBi6ILa8/AAAAQaQBlORKdnP6SlCkdnhxbl9IEtZ1ML5aGfwgHMCitD0gu8QDoMBYs5Z94tlxryC_kAZcVk0mrESu5dV5M-Z5i3L4VcCS5mh9snnR-0QCxICGKzPHyoUyRqBQOPVKkYWScIrVEnjrniY3UA6TXrlc3oSb.jpg?r=0a5');
+    background-size: cover;
+}
+.thirteen{
+    background-image: url('https://upload.wikimedia.org/wikipedia/en/1/1d/TheCovenantPoster.png');
+    background-size: cover;
+}
+.thirteen .image::before {
+    background-image: url('https://m.media-amazon.com/images/S/pv-target-images/ad3b9c9802fe52f69c7c0c5e5322211915fb870f32aa79c50fe5e2d82cacf280.jpg');
+    background-size: cover;
+}
+.fourteen{
+    background-image: url('https://resizing.flixster.com/2bkyVmLlw_8s0SzA8C1gaYNdoZY=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzJlNTkwNTIxLTM0YmYtNDgzNi1hZGFlLThjODM2ZTA5OTEzMi5qcGc=');
+    background-size: cover;
+    background-position: center;
+}
+.fourteen .image::before {
+    background-image: url('https://dnm.nflximg.net/api/v6/2DuQlx0fM4wd1nzqm5BFBi6ILa8/AAAAQeGDXlsghUhZLVVgOUM8ci4J9YW2ho8IqEnH7bfwseiEF-7xDMDd5qn0Diph671VAktZ2LvW38fGhXfNkEQNUd4KPhRusZdVfR5oVwsCH8g7S5ZyqNnsrVA5FxvdMGX1LEgD2obb5lYle15G8A.jpg?r=738');
+    background-size: cover;
+    background-position: center;
+}
+.fifteen{
+    background-image: url('https://assets.voxcinemas.com/posters/P_HO00011790_1732796839078.jpg');
+    background-size: cover;
+    background-position: center;
+}
+.sixteen{
+    background-image: url('https://m.media-amazon.com/images/M/MV5BZThmNDg1NjUtNWJhMC00YjA3LWJiMjItNmM4ZDQ5ZGZiN2Y2XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg');
+    background-size: cover;
+}
+.sixteen .image::before {
+    background-image: url('https://i.guim.co.uk/img/media/97fc02c0ed01d16b8090846535695cb1daa4d084/0_150_2000_1199/master/2000.jpg?width=1200&height=900&quality=85&auto=format&fit=crop&s=d7e0e738065d800ae14eb01924183f7f');
+    background-size: cover;
+    background-position: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Responsive - 2 cards per row on tablets */
+@media (max-width: 1024px) {
+    .movies-section .container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .card {
+        height: 450px;
+    }
+}
+
+/* Responsive - 1 card per row on mobile */
+@media (max-width: 768px) {
+    .movies-section {
+        padding: 30px 15px;
+    }
+
+    .movies-section .container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .card {
+        height: 400px;
+        max-width: 100%;
+    }
+}
